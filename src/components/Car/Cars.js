@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, generatePath, useRouteMatch } from "react-router-dom";
+import './Car.css';
+
 
 const Cars = () => {
   const [error, setError] = useState(null);
@@ -25,6 +27,7 @@ const Cars = () => {
   } else if (!isLoaded) {
     return <div>Loading...</div>;
   } else {
+
     return (
       <div style={{ width: "40%" }}>
         <table>
@@ -38,7 +41,7 @@ const Cars = () => {
           {cars.map( car => (
                       
             <tr>
-                  <td> <a href={`http://localhost:8083/api/licence/${car.brand}/${car.model}/${car.chassisNumber}`} >{car.brand}</a></td>
+                  <td> <Link to='/licence' state={{ make: 'hello'}}>{car.brand}</Link></td>
                   <td>{car.model} </td>
                   <td>{car.year_model} </td>
                   <td>{car.selling_price} </td>

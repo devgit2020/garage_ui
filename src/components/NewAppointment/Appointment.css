@@ -1,4 +1,4 @@
-new-expense__controls {
+new-appointment__controls {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -6,13 +6,13 @@ new-expense__controls {
     text-align: left;
   }
   
-  .new-expense__control label {
+  .new-appointment__controls label {
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
   }
   
-  .new-expense__control input {
+  .new-appointment__controls input {
     font: inherit;
     padding: 0.5rem;
     border-radius: 6px;
@@ -21,6 +21,6 @@ new-expense__controls {
     max-width: 100%;
   }
   
-  .new-expense__actions {
+  .new-appointment__actions {
     text-align: right;
   }
