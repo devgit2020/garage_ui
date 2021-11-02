@@ -17,19 +17,20 @@ const AppointmentForm = () => {
     e.preventDefault();
     fetchText();
   };
-  
 
   async function fetchText() {
     let response = await  fetch("http://localhost:8084/api/appointment/", {
       method: "POST",
       headers: { "Content-Type": "application/json;charset=UTF-8" },
       body: JSON.stringify(appointment),
-     
-    });
+  }).catch((error) => {
+        console.log(error)
+  });
 
+  if(response){
     setStatus(await response.text());
-
-}
+  }
+ }
 
   const handleChange = (event) => {
     setInputs(values => ({...values, [event.target.name]: event.target.value}))

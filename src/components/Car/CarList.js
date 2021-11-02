@@ -1,15 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router,
-  Switch,
-  Route,
-  Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cars from "./Cars";
 import Licence from "../LicenceInfo/Licence";
 import AppointmentForm from "../NewAppointment/AppointmentForm";
 
-const CarsList = () => {
-  //const { path } = useRouteMatch();
-  
+const CarList = () => {
+    
   return (
     <div className="campaign-list">
       <Router>
@@ -17,7 +13,7 @@ const CarsList = () => {
           <Route  path={"/"} component={Cars} />
         </Switch>
         <Switch>
-          <Route  path={"/licence"} component={Licence} />
+          <Route  path={"/licence/:make"} component={Licence} />
         </Switch>
         <Switch>
           <Route  path={"/appointment"} component={AppointmentForm} />
@@ -27,4 +23,4 @@ const CarsList = () => {
   );
 };
 
-export default CarsList;
+export default CarList;
